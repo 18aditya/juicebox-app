@@ -1,0 +1,41 @@
+/* Bagoss TRIAL Font */
+@font-face {
+  font-family: 'Bagoss TRIAL';
+  src: url('/fonts/BagossTRIALVF.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Sohne Font */
+@font-face {
+  font-family: 'Sohne';
+  src: url('/fonts/Sohne-Buch.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* PP Agrandir Font */
+@font-face {
+  font-family: 'PP Agrandir';
+  src: url('/fonts/PPAgrandir-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PP Agrandir';
+  src: url('/fonts/PPAgrandir-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* CSS Variables for Font Families */
+:root {
+  --font-bagoss: 'Bagoss TRIAL', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-sohne: 'Sohne', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-pp-agrandir: 'PP Agrandir', -apple-system, BlinkMacSystemFont, sans-serif;
+}
