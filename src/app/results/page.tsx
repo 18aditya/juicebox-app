@@ -59,9 +59,7 @@ const ResultsContent: React.FC = () => {
   };
 
   return (
-    <main
-      className="flex flex-col w-full max-w-[390px] h-screen mx-auto overflow-hidden bg-gradient-to-b from-[#222737] to-[#0C0D10] backdrop-blur-md md:max-w-2xl lg:max-w-4xl md:h-auto md:rounded-2xl md:shadow-lg md:my-8"
-    >
+    <main className="results-main">
       {/* Mobile Header */}
       <MobileHeader title="juicebox" showBack />
 
@@ -72,37 +70,14 @@ const ResultsContent: React.FC = () => {
       />
 
       {/* Continue Button */}
-      <div className="my-auto flex justify-center w-full pb-6">
+      <div className="results-btn-section">
         <Button
           variant="primary"
           onClick={handleContinue}
-          className="mx-auto"
+          className="results-btn"
           aria-label="Continue to assessment"
-          style={{
-            width: '350px',
-            height: '60px',
-            background: '#FFFFFF',
-            borderRadius: '19px',
-            display: 'flex',
-            flexDirection: 'row',
-            justifyContent: 'center',
-            alignItems: 'center',
-            padding: '24px 0px',
-            gap: '12px'
-          }}
         >
-          <span
-            style={{
-              fontFamily: FONTS.SOHNE,
-              fontSize: '16px',
-              lineHeight: '135%',
-              letterSpacing: '0.02em',
-              color: '#0C0D10',
-              fontWeight: 400
-            }}
-          >
-            Continue
-          </span>
+          <span className="results-btn-label">Continue</span>
         </Button>
       </div>
     </main>
@@ -111,8 +86,8 @@ const ResultsContent: React.FC = () => {
 
 const ResultsPage: React.FC = () => {
   return (
-    <div className="min-h-screen bg-black text-white flex items-center justify-center">
-      <div className="text-center">
+    <div className="results-outer">
+      <div className="results-center">
         <ResultsContent/>
       </div>
     </div>

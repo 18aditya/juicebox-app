@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { gsap } from 'gsap';
-import {LottieAnimation, TextInput, Button } from '@/components';
+import { TextInput } from '@/components';
 import { validateEmail, validateName } from '@/utils/validation';
 import { useFontPreload, FONTS } from '@/hooks/useFonts';
 import MobileHeader from '@/components/ui/MobileHeader';
@@ -88,14 +88,6 @@ const FormPage: React.FC = () => {
     }
   };
 
-  const handleBack = () => {
-    if (currentStep > 0) {
-      setCurrentStep(currentStep - 1);
-    } else {
-      router.push('/tutorial');
-    }
-  };
-
   const handleSubmit = async () => {
     setIsSubmitting(true);
 
@@ -119,17 +111,15 @@ const FormPage: React.FC = () => {
   const currentError = errors[currentStepData.id as keyof FormData];
 
   return (
-    <main
-      className="flex flex-col w-full max-w-[390px] h-screen mx-auto overflow-hidden bg-gradient-to-b from-[#222737] to-[#0C0D10] backdrop-blur-md md:max-w-2xl lg:max-w-4xl md:h-auto md:rounded-2xl md:shadow-lg md:my-8"
-    >
+    <main className="form-main">
       <MobileHeader title="juicebox" showBack />
       {/* Main Content */}
-      <div className="flex flex-col items-center h-full w-full flex-1 px-5 md:px-10 gap-8 md:gap-12">
+      <div className="form-content">
         <AITalks
           title={currentStepData.title}
           subtitle="This will take 2-3 minutes."
         />
-        <div className="flex flex-col flex-1 justify-center items-center w-full">
+        <div className="form-input-wrapper">
           <label htmlFor="form-input" className="sr-only">
             {currentStepData.placeholder}
           </label>
@@ -143,12 +133,7 @@ const FormPage: React.FC = () => {
             error={currentError}
             autoFocus
             disabled={isSubmitting}
-            className="text-center text-lg md:text-xl bg-transparent border-0 border-b-0 focus:border-0 rounded-none px-0 py-4 w-full"
-            style={{
-              fontFamily: FONTS.SOHNE,
-              fontSize: '16px',
-              color: '#FAFAFA',
-            }}
+            className="form-textinput"
           />
         </div>
       </div>
