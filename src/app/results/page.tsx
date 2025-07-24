@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { Button } from '@/components';
 import { gsap } from 'gsap';
@@ -88,7 +88,9 @@ const ResultsPage: React.FC = () => {
   return (
     <div className="results-outer">
       <div className="results-center">
-        <ResultsContent/>
+        <Suspense>
+          <ResultsContent/>
+        </Suspense>
       </div>
     </div>
   );
